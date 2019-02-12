@@ -37,8 +37,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry', '0.11.3'
+  gem 'pry-rails', '0.3.6'
 end
 
 group :development do
@@ -66,3 +67,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # ------------ #
 
 gem 'mysql2', '0.4.6'
+
+# --------- #
+# - Tools - #
+# --------- #
+
+gem 'devise', '~> 4.6', '>= 4.6.1'
+gem 'letter_opener', '~> 1.7'
