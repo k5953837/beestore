@@ -74,3 +74,5 @@ gem 'mysql2', '0.4.6'
 
 gem 'devise', '~> 4.6', '>= 4.6.1'
 gem 'letter_opener', '~> 1.7'
+gem 'bootstrap-sass'
+gem 'simple_form', '~> 4.1'
