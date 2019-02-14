@@ -6,7 +6,13 @@
   <div class="col-md-7">
     <h2> <%= @product.name %> </h2>
 
-    <div class="product-price"> $ <%= @product.price %> </div>
+    <div class="product-price">
+      <% if current_user.premium? %>
+        $ <del><%= @product.original_price %></del> <%= @product.premium_price %>
+      <% else %>
+        $ <%= @product.original_price %>
+      <% end %>
+    </div>
 
   </div>
 </div>

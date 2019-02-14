@@ -1,11 +1,11 @@
 <h2>Update New Product</h2>
 <%= simple_form_for [:admin, @product] do |f| %>
-    <div class="group">
+    <div class="form-group">
       <%= f.input :name %>
-    </div>
-
-    <div class="group">
       <%= f.input :price %>
+      <%= f.simple_fields_for :photos do |p| %>
+        <%= p.input :image, as: :file %>
+      <% end %>
     </div>
 
     <%= f.button "submit", class: "btn-primary", data: {disable_with: "Submit..."} %>

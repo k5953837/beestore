@@ -13,6 +13,14 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <% if current_user %> <!-- if user not log in -->
+          <li>
+            <% if !current_user.admin? && !current_user.premium? %>
+              <%= link_to 'UPGRADE PREMIUM', upgrade_path %>
+            <% end %>
+          </li>
+        <% end %>
+
         <% if !current_user %> <!-- if user not log in -->
           <li> <%= link_to("Log In", new_user_session_path) %> </li>
         <% else %>             <!-- if user log in  -->

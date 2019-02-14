@@ -7,4 +7,8 @@ class User < ApplicationRecord
   def admin?
     is_admin
   end
+
+  def premium?
+    is_premium
+  end
 end

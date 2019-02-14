@@ -5,6 +5,10 @@
       <%= render_product_photo(product.default_photo) %>
     <% end %>
 
-    <%= product.name %> $ <%= product.price %>
+    <% if current_user.premium? %>
+      <%= product.name %> $ <del><%= product.original_price %></del> <%= product.premium_price %>
+    <% else %>
+      <%= product.name %> $ <%= product.original_price %>
+    <% end %>
   </div>
 <% end %>

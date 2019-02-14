@@ -6,4 +6,12 @@ class Product < ApplicationRecord
   def default_photo
     photos.last
   end
+
+  def premium_price
+    (self.price * 0.8).to_i
+  end
+
+  def original_price
+    self.price
+  end
 end
