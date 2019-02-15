@@ -8,7 +8,7 @@ development:
   password: root
   host: 127.0.0.1
   database: beestore_development
-test:
+test: &test
   adapter: mysql2
   encoding: utf8
   reconnect: false
@@ -22,3 +22,6 @@ production:
   pool: 5
   timeout: 5000
   database: db/production.sqlite3
+
+cucumber:
+  <<: *test

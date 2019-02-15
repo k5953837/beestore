@@ -8,7 +8,7 @@ class Product < ApplicationRecord
   end
 
   def premium_price
-    (self.price * 0.8).to_i
+    (self.price.to_f * 0.8).to_i
   end
 
   def original_price

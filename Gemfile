@@ -54,13 +54,13 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :test do
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
-end
+# group :test do
+#   # Adds support for Capybara system testing and selenium driver
+#   gem 'capybara', '>= 2.15'
+#   gem 'selenium-webdriver'
+#   # Easy installation and use of chromedriver to run system tests with Chrome
+#   gem 'chromedriver-helper'
+# end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -75,11 +75,25 @@ gem 'mysql2', '0.4.6'
 # - Tools - #
 # --------- #
 
-gem 'devise', '~> 4.6', '>= 4.6.1'
-gem 'letter_opener', '~> 1.7'
 gem 'bootstrap-sass', '~> 3.4.1'
-gem 'simple_form', '~> 4.1'
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
-gem 'mini_magick', '~> 4.9', '>= 4.9.2'
+gem 'devise', '~> 4.6', '>= 4.6.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
 gem 'hamlit', '~> 2.9', '>= 2.9.2'
+gem 'letter_opener', '~> 1.7'
+gem 'mini_magick', '~> 4.9', '>= 4.9.2'
+gem 'simple_form', '~> 4.1'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
+
+# ------------ #
+# - BDD Test - #
+# ------------ #
+
+group :test do
+  gem 'cucumber-rails', '1.6.0', require: false
+  gem 'database_cleaner', '1.6.1'
+  gem 'email_spec', '2.1.1'
+  gem 'factory_girl_rails', '4.8.0'
+  gem 'rspec-rails', '3.6.0'
+  gem 'selenium-webdriver', '3.4.3'
+end
