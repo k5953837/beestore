@@ -1,0 +1,8 @@
+%h2 Welcome back! Make yourself at home.
+= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .form-group
+    = f.input :email, input_html: { autofocus: true, autocomplete: 'email' }, placeholder: 'user@domain.com'
+    = f.input :password, input_html: { autocomplete: 'current-password' }, hint: 'No special characters.'
+  .actions
+    = f.button :submit, 'LOG IN', class: "btn-primary"
+= render "devise/shared/links"

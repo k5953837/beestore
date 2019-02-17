@@ -1,0 +1,14 @@
+.row
+  .col-md-5
+    = render_product_photo(@product.default_photo, :medium)
+  .col-md-7
+    %h2
+      = @product.name
+    .product-price
+      - if current_user.premium?
+        $
+        %del= @product.original_price
+        = @product.premium_price
+      - else
+        $
+        = @product.original_price

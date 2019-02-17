@@ -1,0 +1,10 @@
+%h2 Forgot your password?
+%p
+  Enter the email address you've registered with us,
+  and we’ll send help shortly.
+= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+  .form-group
+    = f.input :email, input_html: { autofocus: true, autocomplete: 'email' }, placeholder: 'user@domain.com'
+  .actions
+    = f.button :submit, 'RESET PASSWORD', class: "btn-primary"
+= render "devise/shared/links"
