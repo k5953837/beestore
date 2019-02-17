@@ -10,7 +10,7 @@ class Admin::ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @photo = @product.photos.new
+    @product.photos.build
   end
 
   def edit

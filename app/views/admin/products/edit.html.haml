@@ -3,6 +3,6 @@
   .form-group
     = f.input :name
     = f.input :price
-    = f.simple_fields_for :photos do |p|
+    = f.simple_fields_for :photos, Photo.new do |p|
       = p.input :image, as: :file
-  = f.button "submit", class: "btn-primary", data: {disable_with: "Submit..."}
+  = f.button "submit", 'UPDATE PRODUCT', class: "btn-primary", data: {disable_with: "Submit..."}
