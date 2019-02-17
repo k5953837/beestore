@@ -71,6 +71,12 @@ When /^(?:|the .+ )clicks "([^"]*)" icon(?: from row "([^"]*)")?$/ do |link, ind
   end
 end
 
+When /^(?:|the .+ )clicks product picture?$/ do
+  wait_for_ajax
+  find(".thumbnail").click
+end
+
+
 When /^(?:|the .+ )fills in "([^"]*)" with "([^"]*)"(?: within "([^"]*)")?$/ do |field, value, selector_name|
   with_scope(to_selector(selector_name)) do
     fill_in(field_id(field), with: value, match: :prefer_exact)

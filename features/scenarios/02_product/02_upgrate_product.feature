@@ -25,7 +25,7 @@ Feature: 02 - Upgrade Premium
     When the normal user fills in "Password" with "12345678"
     When the normal user presses "LOG IN" within "User Log In Form"
      And the normal user should see "Test Product $ 1000"
-    When the normal user goes to page - "/products/1"
+     And the normal user clicks product picture
      And the normal user should see "Test Product"
      And the normal user should see "$ 1000"
     # 2. Normal user can upgrade to premium and see discount price
@@ -37,6 +37,6 @@ Feature: 02 - Upgrade Premium
      And the normal user should not see "UPGRADE PREMIUM"
     When the normal user goes to page - "/"
      And the normal user should see "Test Product $ 1000 800"
-    When the normal user goes to page - "/products/1"
+     And the normal user clicks product picture
      And the normal user should see "Test Product"
      And the normal user should see "$ 1000 800"

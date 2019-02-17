@@ -1,24 +1,45 @@
-# README
+# BeeStore
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## BDD - Cucumber
 
-Things you may want to cover:
+#### Setup test database
 
-* Ruby version
+Check test database and development database is not the same, and run below command:
 
-* System dependencies
+``` sh
 
-* Configuration
+$ bin/rails db:environment:set RAILS_ENV=test && bin/rails db:drop db:create db:migrate db:seed RAILS_ENV=test
 
-* Database creation
+```
 
-* Database initialization
+#### Online guides
 
-* How to run the test suite
+- Cucumber: https://github.com/cucumber/cucumber
 
-* Services (job queues, cache servers, search engines, etc.)
+- Capybara: https://github.com/jnicklas/capybara
 
-* Deployment instructions
+- Rspec: http://www.relishapp.com/rspec/
 
-* ...
+#### Install for Selenium Webdriver
+
+- Chrome: https://www.google.com/chrome/
+
+- Chrome Driver
+
+``` sh
+
+$ brew install chromedriver
+
+```
+
+#### Run Cucumber
+
+``` sh
+
+# run all feature
+
+$ cucumber
+
+# run single feature
+
+$ cucumber feature_path -r features

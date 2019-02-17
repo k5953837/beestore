@@ -29,7 +29,7 @@ Feature: 01 - Product Management
     When the admin user presses "CREATE PRODUCT"
     When the admin user goes to page - "/"
      And the admin user should see "Test Product $ 666"
-    When the admin user goes to page - "/products/1"
+     And the normal user clicks product picture
      And the admin user should see "Test Product"
      And the admin user should see "$ 666"
     # 3. Admin user can edit product
@@ -44,6 +44,6 @@ Feature: 01 - Product Management
     When the admin user presses "UPDATE PRODUCT"
     When the admin user goes to page - "/"
      And the admin user should see "Test Product 2 $ 1000"
-    When the admin user goes to page - "/products/1"
+     And the normal user clicks product picture
      And the admin user should see "Test Product 2"
      And the admin user should see "$ 1000"
