@@ -8,7 +8,14 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    .container-fluid
-      = render "common/navbar"
-      = notice_message
-      = yield
+    .main
+      .row
+        .header.col-xs-12
+          = render "common/navbar"
+      .row
+        .content.col-xs-12.scroll-y{ class: yield(:wrapper_class) }
+          = notice_message
+          = yield
+      .row
+        .footer.col-xs-12
+    = yield :body_js

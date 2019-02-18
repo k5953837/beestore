@@ -1,8 +1,10 @@
-%h2 Added New Product
-= simple_form_for [:admin, @product] do |f|
-  .form-group
-    = f.input :name
-    = f.input :price
-    = f.simple_fields_for :photos, Photo.new do |p|
-      = p.input :image, as: :file
-  = f.button :submit, 'CREATE PRODUCT', class: "btn-primary", data: {disable_with: "Submit..."}
+.row
+  .col-sm-4.col-sm-offset-4.text-center
+    %h2 Added New Product
+    = simple_form_for [:admin, @product] do |f|
+      .form-group
+        = f.input :name, placeholder: 'Name', label: false
+        = f.input :price, placeholder: 'Price', label: false
+        = f.simple_fields_for :photos, Photo.new do |p|
+          = p.input :image, as: :file, placeholder: 'Image', label: false
+      = f.button :submit, 'CREATE PRODUCT', class: "btn-primary btn-lg btn-block", data: {disable_with: "Submit..."}

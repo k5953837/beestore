@@ -21,12 +21,12 @@ Feature: 01 - Sign Up
     # 3. Show error messages when email is already token
     When the user fills in "Email" with "normal_user@example.com"
     When the user fills in "Password" with "123456"
-    When the user fills in "Password confirmation" with "123456"
+    When the user fills in "Password Confirmation" with "123456"
     When the user presses "SIGN UP"
      And the user should see "Email has already been taken"
     # 4. Show scuccess messages User can register as a normal user
     When the user fills in "Email" with "test_user@example.com"
     When the user fills in "Password" with "123456"
-    When the user fills in "Password confirmation" with "123456"
+    When the user fills in "Password Confirmation" with "123456"
     When the user presses "SIGN UP"
      And the user should see "Welcome! You have signed up successfully."

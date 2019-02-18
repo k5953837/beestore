@@ -7,13 +7,19 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    .container-fluid
-      = render "common/navbar"
-      = notice_message
+    .main
       .row
-        .col-md-2
-          %ul.nav.nav-pills.nav-stacked{:style => "max-width: 300px;"}
-            %li
-              = link_to("Products", admin_products_path)
-        .col-md-10
-          = yield
+        .header.col-xs-12
+          = render "common/navbar"
+      .row
+        .content.col-xs-12.scroll-y{ class: yield(:wrapper_class) }
+          = notice_message
+          .col-md-2
+            %ul.nav.nav-pills.nav-stacked{:style => "max-width: 300px;"}
+              %li
+                = link_to("Products", admin_products_path)
+          .col-md-10
+            = yield
+      .row
+        .footer.col-xs-12
+    = yield :body_js

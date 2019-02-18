@@ -1,8 +1,10 @@
-%h2 Hi, let's get to know each other.
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  .form-group
-    = f.input :email, input_html: { autofocus: true, autocomplete: 'email' }
-    = f.input :password, input_html: { autocomplete: 'new-password' }, hint: "#{@minimum_password_length} characters minimum"
-    = f.input :password_confirmation, input_html: { autocomplete: "new-password" }
-  .actions
-    = f.button :submit, 'SIGN UP', class: "btn-primary"
+.row
+  .col-sm-4.col-sm-offset-4.text-center
+    %h2 Hi, let's get to know each other.
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      .form-group
+        = f.input :email, input_html: { autofocus: true, autocomplete: 'email' }, placeholder: 'Email', label: false
+        = f.input :password, input_html: { autocomplete: 'new-password' }, placeholder: 'Password', label: false
+        = f.input :password_confirmation, input_html: { autocomplete: "new-password" }, placeholder: 'Password Confirmation', label: false
+      .actions
+        = f.button :submit, 'SIGN UP', class: "btn-primary btn-lg btn-block"

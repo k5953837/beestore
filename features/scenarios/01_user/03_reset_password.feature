@@ -37,7 +37,7 @@ Feature: 03 - Reset Password
     Then the user should see "Ready to reset!"
     Then the user should see "Use 6 characters or more. Add numbers, lower and upper case letters for strength."
     When the user fills in "Password" with "111111"
-    When the user fills in "Password confirmation" with "111111"
+    When the user fills in "Password Confirmation" with "111111"
      And the user presses "RESET PASSWORD"
     Then the user should be at page - "/"
     Then the user should see "Your password has been changed successfully. You are now signed in."
