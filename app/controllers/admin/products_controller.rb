@@ -5,7 +5,7 @@ class Admin::ProductsController < ApplicationController
   before_action :admin_required       # limit user who sign in backstage must be admin user
 
   def index
-    @products = Product.all
+    @products = Product.includes(:photos).order('id DESC').page(params[:page]).per(5)
   end
 
   def new
