@@ -2,8 +2,8 @@ module ApplicationHelper
   def notice_message
     alert_types = { notice: :success, alert: :danger }
 
-    close_button_options = { class: "close", "data-dismiss" => "alert", "aria-hidden" => true }
-    close_button = content_tag(:button, "x", close_button_options)
+    close_button_options = { class: 'close', 'data-dismiss': 'alert', 'aria-hidden': true }
+    close_button = content_tag(:button, 'x', close_button_options)
 
     alerts = flash.map do |type, message|
       alert_content = close_button + message
@@ -14,6 +14,6 @@ module ApplicationHelper
       content_tag(:div, alert_content, class: alert_class)
     end
 
-    alerts.join("\n").html_safe
+    alerts.join('\n').html_safe
   end
 end

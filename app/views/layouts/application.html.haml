@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type'}/
     %title Beestore
     = csrf_meta_tags
     = csp_meta_tag
@@ -11,7 +11,7 @@
     .main
       .row
         .header.col-xs-12
-          = render "common/navbar"
+          = render 'common/navbar'
       .row
         .content.col-xs-12.scroll-y{ class: yield(:wrapper_class) }
           = notice_message

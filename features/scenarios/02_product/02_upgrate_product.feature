@@ -17,6 +17,7 @@ Feature: 02 - Upgrade Premium
     When the admin user clicks "NEW PRODUCT"
     When the admin user fills in "Name" with "Test Product"
     When the admin user fills in "Price" with "1000"
+    When the admin user fills in "Discount" with "20"
     When the admin user attaches the file "test.jpg" to "Image"
     When the admin user presses "CREATE PRODUCT"
      And the admin user clicks "admin_user@example.com"

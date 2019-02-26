@@ -1,8 +1,8 @@
-%nav.navbar.navbar-default{:role => "navigation"}
+%nav.navbar.navbar-default{role: 'navigation'}
   .container-fluid
     / Brand and toggle get grouped for better mobile display
     .navbar-header
-      %a.navbar-brand{:href => "/"} BeeStore 🐝
+      %a.navbar-brand{href: '/'} BeeStore 🐝
     / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-right
@@ -14,17 +14,17 @@
         - if !current_user
           / if user not log in
           %li
-            = link_to("LOG IN", new_user_session_path)
+            = link_to('LOG IN', new_user_session_path)
         - else
           / if user log in
           %li.dropdown
-            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            %a.dropdown-toggle{'data-toggle': 'dropdown', href: '#'}
               %i.fa.fa-user
               = current_user.email
               %b.caret
             %ul.dropdown-menu
               - if current_user.is_admin?
                 %li
-                  = link_to("Admin Menu", admin_products_path)
+                  = link_to('Admin Menu', admin_products_path)
               %li
-                = link_to("Logout", destroy_user_session_path, method: :delete)
+                = link_to('Logout', destroy_user_session_path, method: :delete)

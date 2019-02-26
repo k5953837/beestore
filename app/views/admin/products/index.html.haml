@@ -1,6 +1,6 @@
 %h2 Product List
-.pull-right{:style => "padding-bottom: 20px;"}
-  = link_to("NEW PRODUCT", new_admin_product_path, class: "btn btn-primary btn-sm")
+.pull-right{style: 'padding-bottom: 20px;'}
+  = link_to('NEW PRODUCT', new_admin_product_path, class: 'btn btn-primary btn-sm')
 %table.table.table-bordered
   %thead
     %tr
@@ -8,17 +8,14 @@
       %th Product Pic
       %th Name
       %th Price
+      %th Discount (%)
       %th Options
   %tbody
     - @products.each do |product|
       %tr
-        %td
-          = product.id
-        %td
-          = render_product_photo(product.default_photo)
-        %td
-          = product.name
-        %td
-          = product.price
-        %td
-          = link_to("EDIT", edit_admin_product_path(product), class: "btn btn-primary btn-sm")
+        %td= product.id
+        %td= render_product_photo(product.default_photo)
+        %td= product.name
+        %td= product.price
+        %td= product.discount
+        %td= link_to('EDIT', edit_admin_product_path(product), class: 'btn btn-primary btn-sm')
