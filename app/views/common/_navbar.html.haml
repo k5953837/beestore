@@ -9,7 +9,7 @@
         - if current_user
           / if user not log in
           %li
-            - if !current_user.admin? && !current_user.premium?
+            - if !current_user.is_admin? && !current_user.is_premium?
               = link_to 'UPGRADE PREMIUM', upgrade_path
         - if !current_user
           / if user not log in
@@ -23,7 +23,7 @@
               = current_user.email
               %b.caret
             %ul.dropdown-menu
-              - if current_user.admin?
+              - if current_user.is_admin?
                 %li
                   = link_to("Admin Menu", admin_products_path)
               %li

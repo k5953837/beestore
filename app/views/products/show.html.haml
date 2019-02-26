@@ -5,7 +5,7 @@
     %h2
       = @product.name
     .product-price
-      - if current_user.premium?
+      - if current_user.is_premium?
         $
         %del= @product.original_price
         = @product.premium_price

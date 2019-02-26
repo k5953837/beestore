@@ -20,7 +20,7 @@
               Hi!, #{current_user.email}
               %b.caret
             %ul.dropdown-menu
-              - if current_user.admin?
+              - if current_user.is_admin?
                 %li
                   = link_to("Admin Menu", admin_products_path)
               %li

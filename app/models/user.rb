@@ -3,12 +3,4 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :validatable
-
-  def admin?
-    is_admin
-  end
-
-  def premium?
-    is_premium
-  end
 end
