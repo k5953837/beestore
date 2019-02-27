@@ -1,22 +1,31 @@
-%h2 Product List
-.pull-right{style: 'padding-bottom: 20px;'}
-  = link_to('NEW PRODUCT', new_admin_product_path, class: 'btn btn-primary btn-sm')
-%table.table.table-bordered
-  %thead
-    %tr
-      %th #
-      %th Product Pic
-      %th Name
-      %th Price
-      %th Discount (%)
-      %th Options
-  %tbody
-    - @products.each do |product|
-      %tr
-        %td= product.id
-        %td= render_product_photo(product.default_photo)
-        %td= product.name
-        %td= product.price
-        %td= product.discount
-        %td= link_to('EDIT', edit_admin_product_path(product), class: 'btn btn-primary btn-sm')
-= paginate @products
+- content_for :wrapper_class, 'admin-wrapper'
+
+.col-xs-12
+  %h2 Product List
+  .pull-right{style: 'padding-bottom: 20px;'}
+    = link_to('NEW PRODUCT', new_admin_product_path, class: 'btn btn-primary btn-sm')
+  .text-center
+    %table.table.table-hover.table-bordered
+      %thead
+        %tr
+          %th #
+          %th Product Pic
+          %th Name
+          %th Price
+          %th Discount (%)
+          %th Created At
+          %th Updated At
+          %th Options
+      %tbody
+        - @products.each do |product|
+          %tr
+            %td= product.id
+            %td= render_product_photo(product.photo)
+            %td.align-middle
+              = product.name
+            %td= product.price
+            %td= product.discount
+            %td= product.created_at
+            %td= product.updated_at
+            %td= link_to('EDIT', edit_admin_product_path(product), class: 'btn btn-primary btn-sm')
+  = paginate @products
