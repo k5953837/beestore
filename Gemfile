@@ -37,6 +37,7 @@ end
 
 gem 'mysql2', '0.4.6'
 gem 'sqlite3'
+gem 'bullet', '~> 5.9', group: :development
 
 # --------- #
 # - Tools - #
