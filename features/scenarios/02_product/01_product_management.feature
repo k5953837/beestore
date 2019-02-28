@@ -23,7 +23,6 @@ Feature: 01 - Product Management
      And the admin user should see "Name can't be blank"
      And the admin user should see "Price can't be blank and Price is not a number"
      And the admin user should see "Discount can't be blank and Discount must be between 1 & 100"
-     And the admin user should see "Photo is invalid"
     # 2. Admin user can create product
     When the admin user fills in "Name" with "Test Product"
     When the admin user fills in "Price" with "666"
