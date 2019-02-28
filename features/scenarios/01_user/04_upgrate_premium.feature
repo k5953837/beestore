@@ -1,10 +1,10 @@
-Feature: 02 - Upgrade Premium
+Feature: 04 - Upgrade Premium
 
   Background:
     Given the admin user has already signed up
     Given the normal user has already signed up
 
-  Scenario: [02-02]
+  Scenario: [01-04]
     1. Normal user can browser products
     2. Normal user can upgrade to premium and see discount price
     # 1. Normal user can browser products
