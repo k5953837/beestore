@@ -73,7 +73,8 @@ Feature: 01 - Craete Product
     When the admin user attaches the file "test.jpg" to "Image"
     When the admin user presses "CREATE PRODUCT"
     When the admin user goes to page - "/"
-     And the admin user should see "Test Product $ 666"
+     And the admin user should see "Test Product"
+     And the admin user should see "$ 666"
      And the normal user clicks product picture
      And the admin user should see "Test Product"
      And the admin user should see "$ 666"

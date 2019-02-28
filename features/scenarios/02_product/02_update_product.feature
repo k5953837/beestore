@@ -69,7 +69,8 @@ Feature: 02 - Update Product
     When the admin user attaches the file "test2.jpg" to "Image"
     When the admin user presses "UPDATE PRODUCT"
     When the admin user goes to page - "/"
-     And the admin user should see "Test Product 2 $ 1000"
+     And the admin user should see "Test Product 2"
+     And the admin user should see "$ 1000"
      And the normal user clicks product picture
      And the admin user should see "Test Product 2"
      And the admin user should see "$ 1000"

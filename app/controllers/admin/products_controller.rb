@@ -3,6 +3,7 @@ class Admin::ProductsController < ApplicationController
 
   before_action :authenticate_user!   # verify the user who sign in
   before_action :admin_required       # limit user who sign in backstage must be admin user
+  before_action :set_product, only: [:edit, :update]
 
   def index
     @products = Product.includes(:photo).order('id DESC').page(params[:page]).per(5)
@@ -14,7 +15,6 @@ class Admin::ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
   end
 
   def create
@@ -28,8 +28,6 @@ class Admin::ProductsController < ApplicationController
   end
 
   def update
-    @product = Product.find(params[:id])
-
     if @product.update(product_params)
       redirect_to admin_products_path
     else
@@ -41,5 +39,9 @@ class Admin::ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:name, :price, :discount, photo_attributes: [:image])
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
   end
 end

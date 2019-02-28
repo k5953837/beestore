@@ -5,10 +5,4 @@
     %h2
       = @product.name
     .product-price
-      - if current_user.is_premium?
-        $
-        %del= @product.original_price
-        = @product.premium_price
-      - else
-        $
-        = @product.original_price
+      = render "price", product: @product

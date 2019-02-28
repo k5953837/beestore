@@ -1,0 +1,7 @@
+- if current_user.is_premium?
+  $
+  %del= product.original_price
+  = product.premium_price
+- else
+  $
+  = product.original_price

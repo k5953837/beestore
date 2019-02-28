@@ -25,7 +25,8 @@ Feature: 04 - Upgrade Premium
     When the normal user fills in "Email" with "normal_user@example.com"
     When the normal user fills in "Password" with "12345678"
     When the normal user presses "LOG IN" within "User Log In Form"
-     And the normal user should see "Test Product $ 1000"
+     And the normal user should see "Test Product"
+     And the normal user should see "$ 1000"
      And the normal user clicks product picture
      And the normal user should see "Test Product"
      And the normal user should see "$ 1000"
@@ -37,7 +38,8 @@ Feature: 04 - Upgrade Premium
      And the normal user should see "Congratulation to upgrade user to premium."
      And the normal user should not see "UPGRADE PREMIUM"
     When the normal user goes to page - "/"
-     And the normal user should see "Test Product $ 1000 800"
+     And the normal user should see "Test Product"
+     And the normal user should see "$ 1000 800"
      And the normal user clicks product picture
      And the normal user should see "Test Product"
      And the normal user should see "$ 1000 800"
