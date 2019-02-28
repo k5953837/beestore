@@ -6,5 +6,6 @@
         = f.input :name, placeholder: 'Name', label: false
         = f.input :price, placeholder: 'Price', label: false
         = f.input :discount, placeholder: 'Discount', label: false
-        = f.input :photo, as: :file, placeholder: 'Image', label: false
+        = f.simple_fields_for :photo, Photo.new do |p|
+          = p.input :image, as: :file, placeholder: 'Image', label: false
       = f.button 'submit', 'UPDATE PRODUCT', class: 'btn-primary btn-lg btn-block', data: {disable_with: 'Submit...'}

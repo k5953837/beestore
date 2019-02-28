@@ -19,7 +19,6 @@ class Admin::ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.build_photo(image: params[:product][:photo])
 
     if @product.save
       redirect_to admin_products_path
@@ -30,7 +29,6 @@ class Admin::ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-    @product.photo.update_attribute(:image, params[:product][:photo]) if params[:product][:photo]
 
     if @product.update(product_params)
       redirect_to admin_products_path
@@ -42,6 +40,6 @@ class Admin::ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :price, :discount)
+    params.require(:product).permit(:name, :price, :discount, photo_attributes: [:image])
   end
 end
