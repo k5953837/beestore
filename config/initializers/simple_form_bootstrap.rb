@@ -156,6 +156,20 @@ SimpleForm.setup do |config|
     end
   end
 
+  # horizontal input for bootstrap validator
+  config.wrappers :horizontal_bootstrap_validator, tag: 'div', class: 'form-group', error_class: 'has-error' do |b|
+    b.use :html5
+    b.use :placeholder
+    b.optional :maxlength
+    b.optional :pattern
+    b.optional :min_max
+    b.optional :readonly
+    b.use :label, class: 'col-sm-3 control-label col-xs-12'
+    b.use :input, class: 'form-control'
+    b.use :error, wrap_with: { tag: 'span', class: 'help-block' }
+    b.use :hint,  wrap_with: { tag: 'div', class: 'help-block with-errors' }
+  end
+
   # horizontal input for boolean
   config.wrappers :horizontal_boolean, tag: 'div', class: 'form-group row', error_class: 'form-group-invalid', valid_class: 'form-group-valid' do |b|
     b.use :html5

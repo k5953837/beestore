@@ -3,9 +3,17 @@
   %head
     %meta{content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type'}
     %title BeeStore
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': true
-    = javascript_include_tag 'application', 'data-turbolinks-track': true
     = csrf_meta_tags
+    = cdn_css 'font-awesome/4.7.0/css/font-awesome.min.css'
+    = cdn_css 'twitter-bootstrap/3.3.7/css/bootstrap.min.css'
+    = yield :head_cdn_css
+    = cdn_js 'jquery/2.2.4/jquery.min.js'
+    = cdn_js 'twitter-bootstrap/3.3.7/js/bootstrap.min.js'
+    = cdn_js '1000hz-bootstrap-validator/0.11.9/validator.min.js'
+    = yield :head_cdn_js
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+
   %body
     .main
       .row

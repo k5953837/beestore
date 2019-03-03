@@ -1,0 +1,7 @@
+---
+development:
+  uri: https://cdnjs.cloudflare.com/ajax/libs/
+test:
+  uri: https://cdnjs.cloudflare.com/ajax/libs/
+production:
+  uri: https://cdnjs.cloudflare.com/ajax/libs/

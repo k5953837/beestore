@@ -5,7 +5,7 @@ module SelectorsHelper
 
     case selector_name
     when 'User Log In Form'
-      '#new_user'
+      '#new_user_form'
     else
       "##{selector_name}"
     end

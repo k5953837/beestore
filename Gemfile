@@ -49,6 +49,7 @@ gem 'hamlit', '~> 2.9', '>= 2.9.2'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'letter_opener', '~> 1.7'
 gem 'mini_magick', '~> 4.9', '>= 4.9.2'
+gem 'rails-cdn-helper', '1.0.0'
 
 # ------------ #
 # - BDD Test - #

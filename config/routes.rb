@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :products
+    resources :products, except: [:show, :destroy]
   end
 
-  resources :products
+  resources :products, only: [:index, :show]
 
   root 'products#index'
 end
